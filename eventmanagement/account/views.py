@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from django.views import View
 
 
-def index_view(request):
-    return render(request, 'index.html')
+class IndexView(View):
+    def get(self, request):
+        return render(request, 'index.html')
 
-def login_view(request):
-    return render(request, 'login.html')
+class LoginView(View):
+    def get(self, request):
+        return render(request, 'login.html')
